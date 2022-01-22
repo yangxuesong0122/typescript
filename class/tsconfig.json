@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "strict": true,
+    "outDir": "./dist"
+  },
+  // 用来里指定哪些ts文件需要被编译
+  "include": [
+    "./src/**/*"
+  ]
+}
