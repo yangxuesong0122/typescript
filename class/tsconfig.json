@@ -3,7 +3,8 @@
     "module": "es2015",
     "target": "es2015",
     "strict": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "noEmitOnError": true
   },
   // 用来里指定哪些ts文件需要被编译
   "include": [
