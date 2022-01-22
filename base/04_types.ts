@@ -39,7 +39,7 @@ g = [1, 2, 3]
 *   语法：[类型, 类型]
 * */
 let h:[string, string]
-h = ['hello', 'yxs', 123] // 报错
+// h = ['hello', 'yxs', 123] // 报错
 
 /*
 * enum 枚举
@@ -65,5 +65,5 @@ l = {name: 'yxs', age: 18}
 let m: 1 | 2 | 3
 type myType = 1 | 2 | 3
 let n: myType
-n = 4 // 报错，只能是1，2，3
+// n = 4 // 报错，只能是1，2，3
 

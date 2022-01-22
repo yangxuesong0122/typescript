@@ -1,0 +1,54 @@
+/*
+TS 编译器配置文件，ts 编译器可以根据他的信息来对代码进行编译
+  'include' 用来里指定哪些ts文件需要被编译
+    路径：** 表示任意目录
+          * 表示任意文件
+   'exclude' 不需要被编译的文件目录
+    默认值：["node_modules", "bower_components", "json_packages"]
+*/
+{
+  "include": [
+    "./src/**/*" // 根目录下的src下的任意目录下的任意文件
+  ],
+//  "exclude": [
+//    "./src/hello*//***/*//*"
+//  ],
+  /*compilerOptions 编译器的选项*/
+  "compilerOptions": {
+    /*module 指定要使用的模块化的规范
+      可选值：'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'
+    */
+    "module": "es2015",
+    /*target 用来指定ts被编译为的ES的版本*/
+    "target": "es2015",
+    /*lib 用来指定项目中要使用的库*/
+    // "lib": [],
+    /*outDir 用来指定编译后文件所在的目录*/
+    "outDir": "./dist",
+    /*将代码合并为一个文件，设置outFile后所有的全局作用域中的代码会合并到同一个文件中*/
+    /*"outFile": "./dist/app.js"*/
+    /*是否对js文件进行编译，默认false*/
+    "allowJs": true,
+    /*是否检查js代码是都符合语法规范，默认false*/
+    "checkJs": true,
+    /*是否移除注释*/
+    "removeComments": false,
+    /*是否不生成编译后的文件*/
+    "noEmit": false,
+    /*是否当有错误时不生成编译后的文件*/
+    "noEmitOnError": false,
+    /*所有严格检查的总开关*/
+    "strict": false,
+    /*
+      用来设置编译后的文件是否使用严格模式，默认false
+      当文件里写了import export ，会自动进入严格模式
+      */
+    "alwaysStrict": true,
+    /*不允许隐式的any类型*/
+    "noImplicitAny": true,
+    /*不允许不明确类型的this*/
+    "noImplicitThis": true,
+    /*严格的检查空值*/
+    "strictNullChecks": true,
+  }
+}
