@@ -28,6 +28,8 @@ export default class GameControl {
   init() {
     // 给整个网页绑定键盘按下事件
     document.addEventListener('keydown', this.handleKeyDown.bind(this))
+    // 初始化食物位置
+    this.food.change()
     // 让蛇移动
     this.run()
   }
