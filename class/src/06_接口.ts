@@ -1,5 +1,6 @@
 (function () {
   // 描述一个对象的类型
+  // 类型别名
   type myType = {
     name: string,
     age: number
@@ -21,19 +22,28 @@
   interface myInterface {
     name: string;
     age: number;
+    salary?: number;
+    say(): string;
   }
   interface myInterface {
     gender: string;
   }
+  interface mySupInterface extends myInterface {
+    job: string;
+    eat(): void;
+  }
   const obj1: myInterface = {
     name: 'yxs',
     age: 18,
-    gender: '男'
+    gender: '男',
+    say() {
+      return 'yxs'
+    }
   }
 
   interface myInter {
     name: string;
-    sayHello():void;
+    sayHello(): void;
   }
   /*
   * 定义类时，可以使类去实现一个接口

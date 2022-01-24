@@ -5,9 +5,23 @@ a = function (){}
 
 // {属性名: 属性值, 属性名: 属性值} 用来指定对象中可以包含哪些属性
 // 属性名后面加上？表示属性是可选的
-let b: {name: string, age?: number}
+// let b: {
+//   name: string;
+//   age?: number;
+// }
+// 可以省略分号
+let b: {
+  name: string
+  age?: number
+  sum: (num1: number, num2: number) => number
+}
 // b = {} // 报错
-b = {name: 'yxs'}
+b = {
+  name: 'yxs',
+  sum: function (num1, num2) {
+    return num1 + num2
+  }
+}
 
 // [propName: string]: any 表示任意类型的属性
 let c: {name: string, [propName: string]: any}

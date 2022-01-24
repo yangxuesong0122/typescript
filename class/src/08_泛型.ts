@@ -36,3 +36,58 @@ class MyClass<T> {
   }
 }
 const mc = new MyClass<string>('YXS')
+
+// 泛型中数组的使用
+// function myFun<T>(params: Array<T>) {
+function myFun<T>(params: T[]) {
+  return params
+}
+myFun<string>(['1', '2'])
+
+
+// class ToDo {
+//   constructor(private todos: string[]) {
+//
+//   }
+//   getTodo(index: number) {
+//     return this.todos[index]
+//   }
+// }
+// const todo = new ToDo(['吃饭', '睡觉', '打代码'])
+// console.log(todo.getTodo(1))
+
+// class ToDo<T> {
+//   constructor(private todos: T[]) {
+//   }
+//   getTodo(index: number): T {
+//     return this.todos[index]
+//   }
+// }
+// const todo = new ToDo<string>(['吃饭', '睡觉', '打代码'])
+// console.log(todo.getTodo(1))
+
+
+// interface todo {
+//   name: string
+// }
+// // 泛型中必须要有个name属性
+// class ToDo<T extends todo> {
+//   constructor(private todos: T[]) {
+//   }
+//   getTodo(index: number): string {
+//     return this.todos[index].name
+//   }
+// }
+// const todo = new ToDo([{name: '吃饭'}, {name: '睡觉'}])
+// console.log(todo.getTodo(1))
+
+// 泛型的约束
+class ToDo<T extends string | number> {
+  constructor(private todos: T[]) {
+  }
+  getTodo(index: number): T {
+    return this.todos[index]
+  }
+}
+const todo = new ToDo<string>(['吃饭', '睡觉', '打代码'])
+console.log(todo.getTodo(1))
