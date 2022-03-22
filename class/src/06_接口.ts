@@ -56,4 +56,10 @@
     }
     sayHello() {}
   }
+
+  // 对数组约束的接口
+  interface UserArr {
+    [index: number]: string
+  }
+  const arr: UserArr = ['1']
 })()

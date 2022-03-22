@@ -81,3 +81,18 @@ type myType = 1 | 2 | 3
 let n: myType
 // n = 4 // 报错，只能是1，2，3
 
+// 函数重载(前两个叫重载签名，最后一个叫实现签名),目的在于表意更清楚
+// 前两个函数重载定义函数如何调用
+function getInfo(name: string): string
+function getInfo(age: number): string
+function getInfo(str: any): any {
+  if (typeof str === 'string') {
+    return '我叫' + str
+  } else {
+    return '我的年龄是' + str
+  }
+}
+console.log(getInfo('yxs'))
+console.log(getInfo(18))
+// console.log(getInfo(true))
+

@@ -91,3 +91,52 @@ class ToDo<T extends string | number> {
 }
 const todo = new ToDo<string>(['吃饭', '睡觉', '打代码'])
 console.log(todo.getTodo(1))
+
+function longest<Type extends {length: number}>(a: Type, b: Type) {
+  if (a.length >= b.length) {
+    return a
+  } else {
+    return b
+  }
+}
+let longerArray = longest([1, 2], [2, 3, 4])
+const longerString = longest('hello', 'yxs')
+// const notOk = longest(10, 20) // 报错
+
+// 泛型接口
+// interface ConfigFn {
+//   <T>(value: T): T
+// }
+// let getData: ConfigFn = function<T>(value: T): T {
+//   return value
+// }
+// getData<string>('yxs')
+
+// interface ConfigFn<T> {
+//   (value: T): T
+// }
+// function getData<T>(value: T): T {
+//   return value
+// }
+// let myGetData: ConfigFn<string> = getData
+// myGetData('123')
+
+
+// class User {
+//   name: string | undefined
+//   password: string | undefined
+// }
+
+// class MysqlDb<T> {
+//   add(info: T): boolean {
+//     console.log(info)
+//     return true
+//   }
+// }
+
+// let user = new User()
+// user.name = 'yxs'
+// user.password = '123'
+// let db = new MysqlDb<User>()
+// // db.add(1)
+// db.add(user)
