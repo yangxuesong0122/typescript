@@ -23,6 +23,7 @@
     name: string;
     age: number;
     salary?: number;
+    [propsName: string]: any;
     say(): string;
   }
   interface myInterface {
