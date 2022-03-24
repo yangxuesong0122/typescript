@@ -91,3 +91,16 @@ class ToDo<T extends string | number> {
 }
 const todo = new ToDo<string>(['吃饭', '睡觉', '打代码'])
 console.log(todo.getTodo(1))
+
+/* 
+  类型变量之间还可以约束（比如第二个类型变量受第一个类型变量约束）
+    keyof 关键字接收一个对象类型，生成其键名称（可能是字符串或数字）的联合类型
+*/
+function getProp<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  return obj[key]
+}
+let pe = {
+  name: 'yxs',
+  age: 18
+}
+getProp(pe, 'name')
