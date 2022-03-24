@@ -104,3 +104,27 @@ let pe = {
   age: 18
 }
 getProp(pe, 'name')
+
+// 泛型工具类
+// Partial<Type> 用来创建一个类型，将Type的所有属性变为可选的
+interface Props {
+  id: string
+  children: number[]
+}
+type PartialProps = Partial<Props>
+
+// Pick<Type, Keys>从Type中选择一组属性来构造心类型
+interface Props1 {
+  id: string
+  title: string
+  children: number[]
+}
+type PicjProps1 = Pick<Props1, 'id' | 'title'>
+
+// Record<Keys, Type> 构造一个对象类型，属性键为Keys，属性类型为Type
+type RecordObj = Record<'a' | 'b' | 'c', string[]>
+let obj2: RecordObj = {
+  a: ['1'],
+  b: ['1'],
+  c: ['1']
+}
