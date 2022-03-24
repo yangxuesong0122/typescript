@@ -40,3 +40,17 @@ console.log(per.name)
 per.sayHello()
 // 调用类方法
 Person.sayHi()
+
+class Person1 {
+  constructor(private _age: number) {}
+  get age() {
+    return this._age - 10
+  }
+  set age(age: number) {
+    this._age = age + 3
+  }
+}
+let p = new Person1(28)
+p.age = 25
+console.log(p.age)
+
