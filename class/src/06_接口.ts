@@ -5,9 +5,13 @@
     name: string,
     age: number
   }
-  const obj: myType = {
+  type myType1 = myType & {
+    gender: string
+  }
+  const obj: myType1 = {
     name: 'yxs',
-    age: 18
+    age: 18,
+    gender: 'man'
   }
   /*
     接口实际上就是一个规范，是对类的限制
@@ -20,11 +24,13 @@
   *     接口中所有的方法都是抽象方法
   * */
   interface myInterface {
-    name: string;
+    readonly name: string;
     age: number;
     salary?: number;
     say(): string;
   }
+
+  // 扩展接口
   interface myInterface {
     gender: string;
   }
@@ -40,6 +46,7 @@
       return 'yxs'
     }
   }
+  // obj1.name = 'yxs1'
 
   interface myInter {
     name: string;

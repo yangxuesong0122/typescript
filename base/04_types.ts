@@ -31,8 +31,7 @@ c = {name: 'yxs', age: 18, gender: '男'}
 * 设置函数接口的类型声明
 *   语法(形参: 类型, 形参: 类型, ...) => 返回值
 * */
-let d: (a: number, b: number) => number
-d = function (n1, n2): number {
+let d: (a: number, b: number) => number = function (n1, n2) {
   return n1 + n2
 }
 
@@ -47,6 +46,14 @@ let e: string[]
 let f: number[]
 let g: Array<number>
 g = [1, 2, 3]
+interface List {
+  [index: number]: number
+}
+let list: List = [1, 2, 3]
+
+function fun() {
+  let list: IArguments = arguments
+}
 
 /*
 * 元组，就是固定长度的数组
